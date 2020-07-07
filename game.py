@@ -1,5 +1,6 @@
 """A number-guessing game."""
-import random
+
+from random import randint
 
 MIN_NUM = 0
 MAX_NUM = 100
@@ -11,7 +12,7 @@ print("Oh hi there! What's your name? ")
 player_name = input("(type in your name) ")
 
 # choose target number between MIN and MAX constants
-target = random.randint(MIN_NUM,MAX_NUM)
+target = randint(MIN_NUM,MAX_NUM)
 
 #prompt user by name and show range
 print(f"{player_name}, I'm thinking of a number between {MIN_NUM} and {MAX_NUM}.")
