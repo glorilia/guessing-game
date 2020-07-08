@@ -22,17 +22,22 @@ print("Try to guess my number.")
 num_guesses = 0
 
 while True:
-	# prompt player for their guess
-	guess = int(input("Your guess? "))
-	if guess != target:
-		#respond with a hint
-		if guess > target:
-			print("Your guess is too high, try again.")
-		if guess < target:
-			print("Your guess is too low, try again")
+    # prompt player for their guess
+    guess = input("Your guess? ")
+    try:
+        guess = int(guess)
+    except ValueError:
+        print("C'mon, you know that's not a number.")
+        continue
+    if guess != target:
+        #respond with a hint
+        if guess > target:
+            print("Your guess is too high, try again.")
+        if guess < target:
+            print("Your guess is too low, try again")
 
-		#increment number of guesses
-		num_guesses += 1
-	else:
-		print(f"You did it, {player_name}! You guessed the number in {num_guesses} tries!")
-		break
+        #increment number of guesses
+        num_guesses += 1
+    else:
+        print(f"You did it, {player_name}! You guessed the number in {num_guesses} tries!")
+        break
